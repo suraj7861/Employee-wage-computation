@@ -5,7 +5,7 @@ public class EmpWageComputation{
 	public static void main(String[] args){
 
             System.out.println("Welcome to Employee Wage Computation");
-	  
+	    int workingDaysMonth = 20;
             final int Emp_Check = 1;
 	    int Is_Full_Time = 1;
 	    int Is_Part_Part = 0;
@@ -23,7 +23,7 @@ public class EmpWageComputation{
 
 	       case 1:
 	             
-                       income = Emp_WagePerHr * FullDay_Hr;
+                       income = Emp_WagePerHr * FullDay_Hr * workingDaysMonth;
                        System.out.println("Employee is present And Full Time Work");
 	               System.out.println("Employee Daily wage is: "+ income);
 	        	break;
@@ -31,7 +31,7 @@ public class EmpWageComputation{
 	          
 	        case 0:
 
-	                income = Emp_WagePerHr * PartTime_Hr;
+	                income = Emp_WagePerHr * PartTime_Hr * workingDaysMonth;
                         System.out.println("Employee is present And Part Time Work");
                         System.out.println("Employee Daily wage is: "+ income);
 		        break;
