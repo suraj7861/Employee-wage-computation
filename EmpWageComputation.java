@@ -4,12 +4,12 @@ public class EmpWageComputation{
 
             System.out.println("Welcome to Employee Wage Computation");
 	  
-            final int Emp_Check = 1;
+            int Full_Time = 1;
 
-            double checkAttendence = Math.floor(Math.random() * 10) % 2 ;
-            System.out.println("Random value for emp Attendence check is: "+ checkAttendence);
+            double Emp_Check = Math.floor(Math.random() * 10) % 2 ;
+            System.out.println("Random value for emp Attendence check is: "+ Emp_Check);
 
-            if(Emp_Check == checkAttendence){
+            if(Emp_Check == Full_Time ){
                 System.out.println("Employee is present");
                }
            else{
