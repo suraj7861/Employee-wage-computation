@@ -4,15 +4,17 @@ public class EmpWageComputation{
        public static final int Is_Part_Time = 2;
        public static final int Emp_WagePerHr = 20;
        public static final int Num_Working_Days = 20;
- 
+       public static final int Max_Hrs_In_Month = 100; 
+
        public static void main(String[] args){
 
             System.out.println("Welcome to Employee Wage Computation");
+	    int empHrs = 0, totalEmpHrs = 0, TotalWorkingDays = 1;
 
-	    int empHrs = 0, empWage = 0, TotalEmpWage = 0;
+	    while (totalEmpHrs <= Max_Hrs_In_Month && 
+                    TotalWorkingDays <=Num_Working_Days){
 
-	    for (int day =1; day<= Num_Working_Days; day++){
-       
+                    TotalWorkingDays++ ;      
 	            int Emp_Check  = (int) Math.floor(Math.random() * 10) % 3 ;
             
         	    switch (Emp_Check){
@@ -30,12 +32,11 @@ public class EmpWageComputation{
                 		System.out.println("Employee is Absent");
                 		empHrs = 0;	
                         }
-                 empWage = empHrs * Emp_WagePerHr;
-		 TotalEmpWage += empWage;
-		 System.out.println("Employee Wage is; "+ empWage);
+                 totalEmpHrs += empHrs;
+		 System.out.println("Day :"+ TotalWorkingDays +"Emp Hrs:"+empHrs);
                }
+		 int TotalEmpWage = totalEmpHrs * Emp_WagePerHr;
 		 System.out.println("Total Employee Wage is; "+ TotalEmpWage);	  
-
 
        }
  
