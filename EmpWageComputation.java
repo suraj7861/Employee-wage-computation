@@ -4,21 +4,24 @@ public class EmpWageComputation{
 
             System.out.println("Welcome to Employee Wage Computation");
 	  
-            final int Emp_Check = 1;
+            int Is_Full_Time = 1;
             int Emp_WagePerHr = 20;
-	    int FullDay_Hr = 8;    
-            double checkAttendence = Math.floor(Math.random() * 10) % 2 ;
-            System.out.println("Random value for emp Attendence check is: "+ checkAttendence);
+	    int FullDay_Hr = 8;
+	    int empHrs = 0;
+	    int empWage = 0;    
+            double Emp_Check  = Math.floor(Math.random() * 10) % 2 ;
+            System.out.println("Random value for emp Attendence check is: "+ Emp_Check);
 
-            if(Emp_Check == checkAttendence){
-                int income = Emp_WagePerHr * FullDay_Hr;
+            if(Emp_Check == Is_Full_Time){
                 System.out.println("Employee is present");
-	        System.out.println("Employee Daily wage is: "+ income);
+	        empHrs = 8;
                }
            else{
-                System.out.println("Employee is Absent");	
-
+                System.out.println("Employee is Absent");
+                empHrs = 0;	
                }
+	   empWage = empHrs * Emp_WagePerHr;
+	   System.out.println("Employee Wage is; "+ empWage);
      }
 }
  
