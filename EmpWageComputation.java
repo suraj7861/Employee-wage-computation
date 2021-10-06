@@ -1,5 +1,6 @@
-
+//package com.employeeWage;
 public class EmpWageComputation{
+       // create global variables to access in method also
        public static final int Is_Full_Time = 1;
        public static final int Is_Part_Time = 2;
        public static final int Emp_WagePerHr = 20;
@@ -12,11 +13,11 @@ public class EmpWageComputation{
 	    int empHrs = 0, totalEmpHrs = 0, TotalWorkingDays = 1;
 
 	    while (totalEmpHrs <= Max_Hrs_In_Month && 
-                    TotalWorkingDays <=Num_Working_Days){
+                    TotalWorkingDays <= Num_Working_Days){
 
                     TotalWorkingDays++ ;      
 	            int Emp_Check  = (int) Math.floor(Math.random() * 10) % 3 ;
-            
+            	    // use swith case to choose 
         	    switch (Emp_Check){
                		case Is_Full_Time:
                 		System.out.println("Employee is present Full Time");
@@ -32,9 +33,11 @@ public class EmpWageComputation{
                 		System.out.println("Employee is Absent");
                 		empHrs = 0;	
                         }
+		 // calculate total emp hours
                  totalEmpHrs += empHrs;
 		 System.out.println("Day :"+ TotalWorkingDays +"Emp Hrs:"+empHrs);
                }
+		 // calculate total emp wage
 		 int TotalEmpWage = totalEmpHrs * Emp_WagePerHr;
 		 System.out.println("Total Employee Wage is; "+ TotalEmpWage);	  
 
