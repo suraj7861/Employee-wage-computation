@@ -8,19 +8,20 @@ public class EmpWageComputation{
        public static final int NUM_WORKING_DAYS = 20;
        public static final int MAX_HRS_IN_MONTH = 100; 
 
-       public static void main(String[] args){
-	
-            System.out.println("Welcome to Employee Wage Computation");
-	  
+
+	//method: employee wage calculation	
+	public static void empWageComputation(){
+	    //variables initialization
 	    int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 1;
 	    
 	    //check total emp hour not more than 100 and total days not more than 20
 	    while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 		   totalWorkingDays <= NUM_WORKING_DAYS){
-     
+
+	            //random number for employee check 
 	            int emp_Check  = (int) Math.floor(Math.random() * 10) % 3 ;
             
-		    //switch case to check emp full time, part time or absent
+		    //switch case to select emp full time, part time or absent
         	    switch (emp_Check){
                		case IS_FUll_TIME:
                 		System.out.println("Employee is present Full Time");
@@ -50,5 +51,12 @@ public class EmpWageComputation{
             System.out.println("Total Employee Wage is: "+ totalEmpWage);	  
 
        }
- 
+
+	public static void main(String[] args){
+
+            System.out.println("Welcome to Employee Wage Computation");
+
+            //method call
+            empWageComputation();
+        } 
 }
