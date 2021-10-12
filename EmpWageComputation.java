@@ -1,12 +1,27 @@
 //package com.employeeWage;
 public class EmpWageComputation{
 
-       //declared global variables
-       public static final int IS_FUll_TIME = 1;
-       public static final int IS_PART_TIME = 2;
+        //declared global variables
+        public static final int IS_FUll_TIME = 1;
+        public static final int IS_PART_TIME = 2;
+	
+	private final String company;
+	private final int empWagePerHr;
+	private final int workingDayPerMonth;
+	private final int maxHrsInMonth;
+	private int totalEmpWage;	
+
+
+	//parameterized constructor calling
+	public EmpWageComputation(String company, int empWagePerHr, int workingDayPerMonth, int maxHrInMonth) {
+		this.company = company;
+		this.empWagePerHr = empWagePerHr;
+		this.workingDayPerMonth = workingDayPerMonth;
+		this.maxHrsInMonth = maxHrInMonth;
+	}
 
 	//method: employee wage calculation	
-	public static void empWageComputation(String company, int empWagePerHr, int workingDayPerMonth, int maxHrsInMonth){
+	public void empWageComputation(){
 	    //variables initialization
 	    int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 1;
 	    
@@ -43,17 +58,26 @@ public class EmpWageComputation{
                }
 
             // calculate total emp wage
-	    int totalEmpWage = totalEmpHrs * empWagePerHr;
-            System.out.println("Total Emp Wage For Company:-->" + company + " is:" + totalEmpWage);	  
+	    totalEmpWage = totalEmpHrs * empWagePerHr;
+	}
 
-       }
+        //to string method for displaying purpose
+	public String toString() {
+		return "[Total Emp Wage for: "+company+" is: " + totalEmpWage + "]";
+	
+   	          }
 
 	public static void main(String[] args){
 
             System.out.println("Welcome to Employee Wage Computation");
 
-            //method call
-            empWageComputation("D-MART", 25, 5, 25);
-            empWageComputation("JIO", 20, 5, 30);
+	    //initialize object with parameter
+            EmpWageComputation dmart = new EmpWageComputation("D-MART", 25, 5, 25);
+	    EmpWageComputation jio = new EmpWageComputation("JIO", 20, 5, 30);
+	    
+	    dmart.empWageComputation();  //Method calling
+	    System.out.println(dmart);   //displaying dmart object
+	    jio.empWageComputation();    //Method calling
+            System.out.println(jio);     //displaying dmart object
         } 
 }
