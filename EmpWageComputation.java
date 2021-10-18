@@ -1,6 +1,6 @@
 package com.employeeWage;
 
-public class EmpWageComputation{
+public class EmpWageComputation implements ComputeEmpWage{
 
     //declared global variables
     public static final int IS_FUll_TIME = 1;
