@@ -24,13 +24,13 @@ public class EmpWageComputation{
     //display array
     private void empWageCalculation() {
             for (int i = 0; i < noOfCompany; i++) {
-                    companyWageArray[i].setTotalEmpWage(empWageComputation(companyWageArray[i]));
+                    companyWageArray[i].setTotalEmpWage(empWageCalculation(companyWageArray[i]));
                     System.out.println(companyWageArray[i]);
             }
     }
 
     //method: employee wage calculation
-    public int empWageComputation(CompanyEmpWage companyEmpWage){
+    public int empWageCalculation(CompanyEmpWage companyEmpWage){
         //variables initialization
         int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 1;
 
