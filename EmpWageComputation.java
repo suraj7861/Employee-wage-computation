@@ -50,15 +50,14 @@ public class EmpWageComputation implements ComputeEmpWage{
                  System.out.println("Employee is present Full Time");
                  empHrs = 8;
                  break;
-
             case IS_PART_TIME:
-                 System.out.println("Employee is present Part Time");
-                 empHrs = 4;
-                 break;
+                System.out.println("Employee is present Part Time");
+                empHrs = 4;
+                break;
 
             default:
-                 System.out.println("Employee is Absent");
-                 empHrs = 0;
+                System.out.println("Employee is Absent");
+                empHrs = 0;
             }
 
             //calculate total emp hours
@@ -88,8 +87,6 @@ public class EmpWageComputation implements ComputeEmpWage{
         companyWageArray.addComapanyEmpWage("Jio",25,2,10);
         companyWageArray.addComapanyEmpWage("Amazon",15,4,10);
         companyWageArray.empWageCalculation();
-
-
     }
 
 }
