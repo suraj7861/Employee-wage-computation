@@ -12,9 +12,9 @@ public class EmpWageComputation implements ComputeEmpWage{
     private ArrayList<CompanyEmpWage> companyWageArrayList; 
     //constructor
     public EmpWageComputation() {
-		super();
-		companyWageArrayList = new ArrayList<CompanyEmpWage>();
-	}
+	super();
+	companyWageArrayList = new ArrayList<CompanyEmpWage>();
+    }
 
     // Add companyEmpWage method
     public void addComapanyEmpWage(String company, int empWagePerHr, int workingDayPerMonth, int maxHrsInMonth) {
@@ -24,10 +24,10 @@ public class EmpWageComputation implements ComputeEmpWage{
 
     //display array
     public void empWageCalculation() {
-            for (int i = 0; i < companyWageArrayList.size(); i++) {
-            	CompanyEmpWage companyWage = companyWageArrayList.get(i);//get index 
-            	companyWage.setTotalEmpWage(empWageCalculation(companyWage));//set Total emp wage
-            	System.out.println("Arraylist Element:"+companyWage);//print ArrayList
+        for (int i = 0; i < companyWageArrayList.size(); i++) {
+            CompanyEmpWage companyWage = companyWageArrayList.get(i);//get index 
+            companyWage.setTotalEmpWage(empWageCalculation(companyWage));//set Total emp wage
+            System.out.println("Arraylist Element:"+companyWage);//print ArrayList
                 
             }
     }
@@ -39,35 +39,35 @@ public class EmpWageComputation implements ComputeEmpWage{
 
         //check total emp hour not more than 100 and total days not more than 20
         while (totalEmpHrs <= companyEmpWage.maxHrsInMonth &&
-               totalWorkingDays <= companyEmpWage.workingDayPerMonth){
+             totalWorkingDays <= companyEmpWage.workingDayPerMonth){
 
-                //random number for employee check
-                int emp_Check  = (int) Math.floor(Math.random() * 10) % 3 ;
+              //random number for employee check
+              int emp_Check  = (int) Math.floor(Math.random() * 10) % 3 ;
 
-                //switch case to select emp full time, part time or absent
-                switch (emp_Check){
-                    case IS_FUll_TIME:
-                            System.out.println("Employee is present Full Time");
-                            empHrs = 8;
-                            break;
+              //switch case to select emp full time, part time or absent
+              switch (emp_Check){
+              case IS_FUll_TIME:
+                    System.out.println("Employee is present Full Time");
+                    empHrs = 8;
+                    break;
 
-                    case IS_PART_TIME:
-                            System.out.println("Employee is present Part Time");
-                            empHrs = 4;
-                            break;
+               case IS_PART_TIME:
+                    System.out.println("Employee is present Part Time");
+                    empHrs = 4;
+                    break;
 
-                    default:
-                            System.out.println("Employee is Absent");
-                            empHrs = 0;
-                    }
+               default:
+                    System.out.println("Employee is Absent");
+                    empHrs = 0;
+               }
 
-             //calculate total emp hours
-             totalEmpHrs += empHrs;
-             System.out.println("Day : "+ totalWorkingDays +" Emp Hrs : "+empHrs);
+              //calculate total emp hours
+              totalEmpHrs += empHrs;
+              System.out.println("Day : "+ totalWorkingDays +" Emp Hrs : "+empHrs);
 
-            //day increment by 1 every iteration
+             //day increment by 1 every iteration
              totalWorkingDays++ ;
-           }
+        }
 
         // calculate total emp wage
         return companyEmpWage.totalEmpWage = totalEmpHrs * companyEmpWage.empWagePerHr;
