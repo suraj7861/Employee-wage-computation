@@ -1,31 +1,34 @@
 package com.employeeWage;
 
+import java.util.ArrayList;
+
 public class EmpWageComputation implements ComputeEmpWage{
 
     //declared global variables
     public static final int IS_FUll_TIME = 1;
     public static final int IS_PART_TIME = 2;
-
-    private int noOfCompany = 0;
-    private CompanyEmpWage[] companyWageArray; // Array Declaration for Multiple companies
-
-    // Default constructor: EmpWageComputation class and array initialization
+ 
+    // ArrayList Declaration: Multiple companies 
+    private ArrayList<CompanyEmpWage> companyWageArrayList; 
+    //constructor
     public EmpWageComputation() {
-            companyWageArray = new CompanyEmpWage[5];
-    }
-
-    // Add companyEmpWage method: add company and passing parameter list
-	private void addComapanyEmpWage(String company, int empWagePerHr, int workingDayPerMonth, int maxHrsInMonth) {
-        companyWageArray[noOfCompany] = new CompanyEmpWage(company, empWagePerHr, workingDayPerMonth, maxHrsInMonth);
-        noOfCompany++;
-		
+		super();
+		companyWageArrayList = new ArrayList<CompanyEmpWage>();
 	}
 
+    // Add companyEmpWage method
+    public void addComapanyEmpWage(String company, int empWagePerHr, int workingDayPerMonth, int maxHrsInMonth) {
+	CompanyEmpWage companyWage   = new CompanyEmpWage(company, empWagePerHr, workingDayPerMonth, maxHrsInMonth);
+	companyWageArrayList.add(companyWage);
+    }
+
     //display array
-    private void empWageCalculation() {
-            for (int i = 0; i < noOfCompany; i++) {
-                    companyWageArray[i].setTotalEmpWage(empWageCalculation(companyWageArray[i]));
-                    System.out.println(companyWageArray[i]);
+    public void empWageCalculation() {
+            for (int i = 0; i < companyWageArrayList.size(); i++) {
+            	CompanyEmpWage companyWage = companyWageArrayList.get(i);//get index 
+            	companyWage.setTotalEmpWage(empWageCalculation(companyWage));//set Total emp wage
+            	System.out.println("Arraylist Element:"+companyWage);//print ArrayList
+                
             }
     }
 
@@ -74,8 +77,9 @@ public class EmpWageComputation implements ComputeEmpWage{
     public static void main(String[] args){
 
         System.out.println("Welcome to Employee Wage Computation");
-
+        //create object
         EmpWageComputation companyWageArray = new EmpWageComputation();
+        //Add parameters
         companyWageArray.addComapanyEmpWage("D-Mart",20,3,10);
         companyWageArray.addComapanyEmpWage("Jio",25,2,10);
         companyWageArray.addComapanyEmpWage("Amazon",15,4,10);
@@ -85,3 +89,4 @@ public class EmpWageComputation implements ComputeEmpWage{
     }
 
 }
+
