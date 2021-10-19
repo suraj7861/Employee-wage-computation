@@ -28,8 +28,8 @@ public class EmpWageComputation implements ComputeEmpWage{
             CompanyEmpWage companyWage = companyWageArrayList.get(i);//get index 
             companyWage.setTotalEmpWage(empWageCalculation(companyWage));//set Total emp wage
             System.out.println("Arraylist Element:"+companyWage);//print ArrayList
-                
-            }
+            System.out.println("--------------------------------------");    
+        }
     }
 
     //method: employee wage calculation
@@ -64,9 +64,13 @@ public class EmpWageComputation implements ComputeEmpWage{
               //calculate total emp hours
               totalEmpHrs += empHrs;
               System.out.println("Day : "+ totalWorkingDays +" Emp Hrs : "+empHrs);
+	      
+	      //Daily wage calculation
+	      int dailyWage=empHrs * companyEmpWage.empWagePerHr;
+	      System.out.println("Daily Employee Wage: "+dailyWage);
 
-             //day increment by 1 every iteration
-             totalWorkingDays++ ;
+              //day increment by 1 every iteration
+              totalWorkingDays++ ;
         }
 
         // calculate total emp wage
